@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import MovieCard from "./components/MovieCard";
+import { useState } from "react";
 import MovieCards from "./components/MovieCards";
 import Search from "./components/Search";
 

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
-
 const MovieCards = ({ title }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
   const search = title || "movie";
-  const url = `https://www.omdbapi.com/?s=${search}&y=2026&page=1&apikey=4706733c`;
-
+  const url = `https://www.omdbapi.com/?s=${search}&page=1&apikey=${API_KEY}`;
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
