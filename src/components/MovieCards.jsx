@@ -17,11 +17,11 @@ const MovieCards = ({ title }) => {
         if (data.Response === "True") {
           setMovies(data.Search);
         } else {
-          // هنا نعالج كل الحالات السيئة
+          // Handle all error cases
           if (data.Error === "Too many results.") {
-            setMessage("⚠️ النتائج كثيرة جدًا، حاول كتابة اسم أدق");
+            setMessage("⚠️ Too many results, try a more specific title");
           } else {
-            setMessage("❌ لا توجد نتائج لهذا البحث");
+            setMessage("❌ No results found for this search");
           }
         }
 
@@ -37,7 +37,7 @@ const MovieCards = ({ title }) => {
       <div className="flex justify-center items-center py-20">
         <div className="text-center">
           <div className="inline-block w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-          <p className="text-slate-300 text-lg">⏳ جاري البحث...</p>
+          <p className="text-slate-300 text-lg">⏳ Searching...</p>
         </div>
       </div>
     );
