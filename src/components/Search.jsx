@@ -20,7 +20,7 @@ const Search = ({ setSearchTitle }) => {
       <form onSubmit={onSubmitHandle} className="max-w-2xl mx-auto">
         <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center bg-slate-800/50 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-slate-700">
           <label
-            className="text-slate-300 font-medium min-w-fit"
+            className="text-slate-300 font-medium min-w-fit text-center"
             htmlFor="title"
           >
             Title

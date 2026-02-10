@@ -1,11 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import movieFallback from "../assets/movie-fallback.svg";
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
   const poster =
     movie.Poster && movie.Poster !== "N/A" ? movie.Poster : movieFallback;
 
+  const handleClick = () => {
+    navigate(`/movie/${movie.imdbID}`);
+  };
+
   return (
-    <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-xl overflow-hidden border border-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-500/50 cursor-pointer group">
+    <div
+      onClick={handleClick}
+      className="bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-xl overflow-hidden border border-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-500/50 cursor-pointer group"
+    >
       <div className="relative aspect-2/3 overflow-hidden bg-slate-900">
         <img
           src={poster}
